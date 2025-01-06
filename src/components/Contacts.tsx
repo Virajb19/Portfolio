@@ -3,8 +3,6 @@ import EmailCard from "./EmailCard";
 import { BsGithub, BsLinkedin, BsTwitterX } from "react-icons/bs";
 import { FaGoogleDrive } from "react-icons/fa";
 import { SiLeetcode } from "react-icons/si";
-import { useForm } from "react-hook-form";
-import { z } from 'zod'
 
 const Links = [
     {
@@ -34,33 +32,20 @@ const Links = [
     }
   ];
 
-const formSchema = z.object({
-    name: z.string().min(1, { message: 'Provide a name'}).max(10, { message: 'Name should be less than 15 chars'}),
-    email: z.string().email({ message: 'Enter a valid email'}),
-    linkedIn: z.string().url().refine(url => url.includes('linkedin.com'), { message: 'Provide a valid URL'}),
-    message: z.string().min(1, { message: 'Provide a message'}).max(2000)
-})
-
-type Input = z.infer<typeof formSchema>
 
 export default function Contacts() {
 
-    const form = useForm()
-
-  return <footer className="flex flex-col gap-10 items-center">
+  return <footer id="contact" className="flex flex-col gap-10 items-center mt-4">
+          <h3 className="text-5xl font-bold underline"><span className="bg-gradient-to-r from-orange-400 to-orange-600 text-transparent bg-clip-text">Contact</span> Me</h3>
            <EmailCard />
-            {/* <form action="https://getform.io/f/aroompzb" method="POST">
-                 <input name="name" placeholder="Enter your name"/>
-                <button type="submit" className="border">Send</button>
-            </form> */}
-          <div className="flex items-center gap-5">
+          <div className="flex items-center gap-5 mb:gap-3">
               {Links.map(link => {
                  return <div className="flex flex-col items-center gap-1">
-                      <Link target="_blank" href={link.href} className="border-2 border-orange-400 p-4 group rounded-lg relative overflow-hidden">
+                      <Link target="_blank" href={link.href} className="border-2 border-orange-400 p-4 mb:p-3 group rounded-lg relative overflow-hidden">
                        <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full duration-1000"/>
-                      <link.icon className="size-12 text-orange-600 group-hover:rotate-12 duration-300"/>
+                      <link.icon className="size-12 mb:size-7 text-orange-600 group-hover:rotate-12 duration-300"/>
                   </Link>
-                   <h4 className="text-lg font-semibold text-orange-300">{link.label}</h4>
+                   <h4 className="text-lg mb:hidden font-semibold text-orange-300">{link.label}</h4>
                  </div>
               })}
           </div>

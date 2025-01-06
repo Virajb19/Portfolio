@@ -1,47 +1,27 @@
 'use client'
 
 import Header from '@/components/Header';
-import { TypewriterEffectSmooth } from '@/components/ui/typewriter-effect'
 import Image from 'next/image';
-import { BackgroundBeamsWithCollision } from "@/components/ui/background-beams-with-collision";
 import { motion } from 'framer-motion'
 import { FileText } from 'lucide-react'
 import Contacts from '@/components/Contacts';
 import Skills from '@/components/Skills';
-
-const words = [
-  {
-    text: "I",
-    className: "text-white"
-  },
-  {
-    text: "am",
-    className: "text-white"
-  },
-  {
-    text: "a",
-    className: "text-white"
-  },
-  {
-    text: "Fullstack",
-    className: "text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-800",
-  },
-  {
-    text: "Developer",
-    className: "text-transparent bg-clip-text bg-gradient-to-r from-orange-400 to-orange-800",
-  },
-];
-
+import Projects from '@/components/Projects';
+import TypingAnimation from "@/components/ui/typing-animation";
 
 export default function page() {
   return <div className="w-full min-h-screen bg-black flex justify-center py-16 text-white">
        <Header />
-       <div className='flex flex-col gap-3 items-center'>
+       <div id='home' className='flex flex-col gap-3 items-center'>
           <Image width={200} height={200} alt='user' src={'/memoji-computer.png'}/>
-          <p className='text-5xl mb:text-3xl font-semibold'>Hey 👋 I'm {' '}
-            <motion.span initial={{opacity: 0,scale: 0}} animate={{opacity: 1, scale: 1}} transition={{duration: 0.5, ease: 'easeInOut'}} className='inline-block'>Viraj</motion.span>
+          <p className='text-5xl mb:text-3xl font-semibold'>Hey 👋 I'm <span className='uppercase bg-gradient-to-tr from-orange-400 to-orange-700 bg-clip-text text-transparent'>Viraj</span>
           </p>
-          <TypewriterEffectSmooth words={words}/>
+            <div className='flex items-center gap-2'>
+                  <TypingAnimation className='mb:text-2xl'>
+                    I am a FullStack Developer
+                </TypingAnimation>
+                <motion.span initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.7, repeat: Infinity, repeatType: 'reverse'}} className='inline-block rounded-sm w-1 h-10 bg-orange-500'/>
+            </div>
            <button onClick={() => {
              const link = document.createElement('a')
              link.href = '/Resume.pdf'
@@ -51,8 +31,9 @@ export default function page() {
                 <motion.div animate={{translateX: ['-100%','100%']}} transition={{duration: 1, ease: 'easeInOut', repeat: Infinity, repeatDelay: 0.4}} className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"/>
                 <FileText className='group-hover:-rotate-12 group-hover:scale-110 transition-transform duration-200'/> Resume       
             </button>
-            {/* <Contacts /> */}
             <Skills />
+            <Projects />
+            <Contacts />
        </div>
   </div>
 }

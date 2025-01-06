@@ -5,11 +5,19 @@ import { twMerge } from "tailwind-merge"
 export default function Header() {
 
     const [activeTab,setActiveTab] = useState('Home')
+
+    function handleClick(tab: string) {
+      setActiveTab(tab)
+      const element = document.getElementById(tab.toLowerCase())
+      if(element) {
+        element.scrollIntoView({behavior: 'smooth', block: 'start'})
+      }
+    }
     
   return <motion.nav initial={{y: -70}} animate={{y: 0}} transition={{type: 'spring', bounce: 0.7, duration: 0.8}}
   className="fixed z-[99] top-4 backdrop-blur-md flex items-center gap-3 mb:gap-1 font-semibold text-lg mb:text-base rounded-full p-1 bg-white/10 border border-white/15">
       {['Home','Skills','Projects','Contact'].map(tab => {
-        return <button key={tab} onClick={() => setActiveTab(tab)} className={twMerge("relative px-3 py-1.5 rounded-full duration-300 transition-colors",
+        return <button key={tab} onClick={() => handleClick(tab)} className={twMerge("relative px-3 py-1.5 rounded-full duration-300 transition-colors",
             tab === activeTab ? 'text-white' : 'text-gray-400 hover:text-white hover:bg-white/10'
         )}>
             {tab}

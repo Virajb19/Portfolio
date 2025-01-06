@@ -9,12 +9,22 @@ const config: Config = {
   ],
   theme: {
   	extend: {
-		screens: {
-			'mb': {'max': '640px'},
-			'tb': {'min': '641px', 'max': '1279px'},
-			'lp': {'min': '1280px', 'max': '1919px'},
-			'dp': {'min': '1920px'},
-		  },
+  		screens: {
+  			mb: {
+  				max: '640px'
+  			},
+  			tb: {
+  				min: '641px',
+  				max: '1279px'
+  			},
+  			lp: {
+  				min: '1280px',
+  				max: '1919px'
+  			},
+  			dp: {
+  				min: '1920px'
+  			}
+  		},
   		colors: {
   			background: 'hsl(var(--background))',
   			foreground: 'hsl(var(--foreground))',
@@ -63,7 +73,8 @@ const config: Config = {
   			sm: 'calc(var(--radius) - 4px)'
   		},
   		animation: {
-  			orbit: 'orbit calc(var(--duration)*1s) linear infinite'
+  			orbit: 'orbit calc(var(--duration)*1s) linear infinite',
+  			'shiny-text': 'shiny-text 8s infinite'
   		},
   		keyframes: {
   			orbit: {
@@ -72,6 +83,14 @@ const config: Config = {
   				},
   				'100%': {
   					transform: 'rotate(calc(var(--angle) * 1deg + 360deg)) translateY(calc(var(--radius) * 1px)) rotate(calc((var(--angle) * -1deg) - 360deg))'
+  				}
+  			},
+  			'shiny-text': {
+  				'0%, 90%, 100%': {
+  					'background-position': 'calc(-100% - var(--shiny-width)) 0'
+  				},
+  				'30%, 60%': {
+  					'background-position': 'calc(100% + var(--shiny-width)) 0'
   				}
   			}
   		}

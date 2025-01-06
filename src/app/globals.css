@@ -1,6 +1,16 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: space;
+  src: url(/space.ttf);
+}
+
+body {
+  font-family: space;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;
