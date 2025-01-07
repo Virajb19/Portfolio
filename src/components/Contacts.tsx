@@ -41,7 +41,7 @@ export default function Contacts() {
            <EmailCard />
           <div className="flex items-center gap-5 mb:gap-3">
               {Links.map((link, i) => {
-                 return <motion.div initial={{opacity: 0, y: 15, rotate: 20}} whileInView={{opacity: 1, y: 0, rotate: 0}} transition={{duration: 1, delay: i * 0.1, type: 'spring', bounce: 0.5}} 
+                 return <motion.div initial={{opacity: 0, y: 15, rotate: 20}} whileInView={{opacity: 1, y: 0, rotate: 0}} transition={{duration: 1, delay: i * 0.2, type: 'spring', bounce: 0.5}} 
                  className="flex flex-col items-center gap-1">
                       <Link target="_blank" href={link.href} className="border-2 border-orange-400 p-4 mb:p-3 group rounded-lg relative overflow-hidden">
                        <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full duration-1000"/>
