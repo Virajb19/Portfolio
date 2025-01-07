@@ -8,11 +8,11 @@ const projects = [
   {name: 'Github', stack : ['Next JS', 'Typescript','Next Auth', 'Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'Tanstack Query', 'Stripe'], liveUrl: '', github: 'https://github.com/Virajb19/GitChat'},
   {name: 'Quizmify', stack: ['Next JS', 'Typescript','Next Auth', 'Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'Tanstack Query'], liveUrl: '', github: 'https://github.com/Virajb19/Quizmify'},
   {name: 'CodeCraft', stack: ['React JS', 'Express JS', 'Node JS','Typescript','Passport JS', 'Zustand', 'Socket IO','Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'Tanstack Query'], liveUrl: '', github: 'https://github.com/Virajb19/CodeCraft'},
-  {name: 'ChatPDF', stack: ['Next JS', 'Typescript','Next Auth', 'Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'Tanstack Query', 'Stripe', 'Zod', 'AWS S3'], liveUrl: '', github: 'https://github.com/Virajb19/ChatPDF'}
+  {name: 'ChatPDF', stack: ['Next JS', 'Typescript','Next Auth', 'Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'Tanstack Query', 'Stripe', 'Zod', 'AWS S3', 'Pinecone DB'], liveUrl: '', github: 'https://github.com/Virajb19/ChatPDF'}
 ]
 
 export default function Projects() {
-  return <div id="projects" className="flex flex-col items-center overflow-hidden">
+  return <div id="projects" className="flex flex-col items-center mb:overflow-hidden">
      <h2 className="text-5xl mb-10 font-bold text-orange-600 underline">Projects</h2>
      <div className="grid grid-cols-1 sm:grid-cols-2 sm:mx-3 gap-10">
         {projects.map((project,i) => {
