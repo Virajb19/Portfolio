@@ -2,13 +2,14 @@ import { useState } from "react"
 import { useCopyToClipboard } from 'usehooks-ts'
 import { Copy, CheckCheck} from 'lucide-react'
 import { twMerge } from "tailwind-merge"
+import { motion } from 'framer-motion'
 
 export default function EmailCard() {
 
     const [isCopied, setIsCopied] = useState(false)
     const [copiedText, copy] = useCopyToClipboard()
 
-  return <div className="border-[3px] border-orange-800 mb:w-[90vw] flex flex-col items-center gap-3 p-5 rounded-lg text-2xl text-white">
+  return <motion.div initial={{opacity: 0, y: -20}} whileInView={{opacity: 1, y: 0}} transition={{duration: 1, ease: 'easeInOut'}} className="border-[3px] border-orange-800 mb:w-[90vw] flex flex-col items-center gap-3 p-5 rounded-lg text-2xl text-white">
     <p>
       Mail me at <span className="font-semibold underline text-orange-400">virajb004@gmail.com</span>
     </p>
@@ -27,5 +28,5 @@ export default function EmailCard() {
          </>
       )}
    </button>
-  </div>
+  </motion.div>
 }

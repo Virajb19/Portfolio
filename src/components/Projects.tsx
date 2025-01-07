@@ -2,6 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Radar from "./radar";
 import { BsGithub } from 'react-icons/bs'
+import { motion } from 'framer-motion'
 
 const projects = [
   {name: 'Github', stack : ['Next JS', 'Typescript','Next Auth', 'Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'Tanstack Query', 'Stripe'], liveUrl: '', github: 'https://github.com/Virajb19/GitChat'},
@@ -11,11 +12,12 @@ const projects = [
 ]
 
 export default function Projects() {
-  return <div id="projects" className="flex flex-col items-center">
+  return <div id="projects" className="flex flex-col items-center overflow-hidden">
      <h2 className="text-5xl mb-10 font-bold text-orange-600 underline">Projects</h2>
      <div className="grid grid-cols-1 sm:grid-cols-2 sm:mx-3 gap-10">
-        {projects.map(project => {
-           return <div key={project.name} className="relative group max-w-[500px] mb:w-[90vw] flex flex-col gap-2 border border-orange-500 rounded-lg duration-300 hover:-translate-y-2">
+        {projects.map((project,i) => {
+           return <motion.div initial={{opacity: 0, x: i % 2 === 0 ? -30 : 30}} whileInView={{opacity: 1, x: 0}} transition={{duration: 0.7, delay: i * 0.1, ease: 'easeInOut'}}
+           key={project.name} className="relative group max-w-[500px] mb:w-[90vw] flex flex-col gap-2 border border-orange-500 rounded-lg duration-300 hover:-translate-y-2">
            <div className="absolute -inset-[2px] bg-orange-600 blur-md group-hover:animate-pulse"/>
              <div className="flex flex-col gap-3 z-10 bg-black rounded-lg h-full">
                    <h3 className="text-3xl font-bold ml-4 mt-2">{project.name}</h3>
@@ -39,7 +41,7 @@ export default function Projects() {
                          </div>
                      </div>
              </div>
-         </div>
+         </motion.div>
         })}
   </div>
   </div>
