@@ -29,7 +29,7 @@ export default function page() {
              link.download = 'Resume_Viraj.pdf'
              link.click()
            }} className='group relative flex items-center gap-2 px-4 py-2 rounded-lg text-2xl font-semibold overflow-hidden bg-gradient-to-t from-orange-600 to-orange-700'>
-                <motion.div animate={{translateX: ['-100%','100%']}} transition={{duration: 1, ease: 'easeInOut', repeat: Infinity, repeatDelay: 0.4}} className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"/>
+                <motion.div initial={{translateX: '-100%'}} animate={{translateX: '100%'}} transition={{duration: 1, ease: 'easeInOut', repeat: Infinity, repeatDelay: 0.4}} className="absolute inset-0 bg-gradient-to-r from-transparent via-white/30 to-transparent"/>
                 <FileText className='group-hover:-rotate-12 group-hover:scale-110 transition-transform duration-200'/> Resume       
             </motion.button>
             <Skills />
