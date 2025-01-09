@@ -10,7 +10,7 @@ import Projects from '@/components/Projects';
 import TypingAnimation from "@/components/ui/typing-animation";
 
 export default function HomePage() {
-  return <div className="w-full min-h-screen bg-black flex flex-col justify-center items-center pt-16 pb-7 text-white">
+  return <div className="w-full min-h-screen relative bg-black flex flex-col justify-center items-center pt-16 pb-7 text-white overflow-hidden">
 
        <Header />
 
@@ -41,7 +41,7 @@ export default function HomePage() {
        <Contacts />
 
        <div className='flex items-center font-bold text-2xl mb:text-lg mt-5'>
-           Made with ❤️ by <span className='bg-gradient-to-r ml-2 from-orange-400 via-yellow-600 to-orange-700 bg-clip-text text-transparent'>viraj.bhardwaj</span>
+           Made with ❤️ by <span className='bg-gradient-to-r ml-2 from-orange-400 via-orange-600 to-orange-700 bg-clip-text text-transparent'>viraj.bhardwaj</span>
        </div>
   </div>
 }

@@ -30,6 +30,10 @@ export default function ContactForm() {
         if(formRef.current) {
             try {
              const res = await emailjs.sendForm("service_5i21pba","template_llshrg9", formRef.current, { publicKey: "D_zqeLrLgMQkaPeZ4"})
+             if(res.status !== 200) {
+                throw new Error(`Error: ${res.text}`)
+             }
+             
              toast.success('Message sent successfully.')
              form.reset()
             } catch(err) {
