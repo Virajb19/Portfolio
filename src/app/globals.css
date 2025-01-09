@@ -11,6 +11,11 @@ body {
   font-family: space;
 }
 
+.input-style {
+  @apply outline-none px-4 py-2 bg-black/70 mb:placeholder:text-sm placeholder:text-base placeholder:font-semibold font-semibold rounded-xl border-[3px] border-gray-600 focus:ring-2 focus:ring-orange-600 focus:border-transparent duration-200
+}
+
+
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -1,10 +1,16 @@
-import { useState } from "react"
+import { useEffect, useState } from "react"
 import { motion } from 'framer-motion'
 import { twMerge } from "tailwind-merge"
+import { useLocalStorage } from "usehooks-ts"
 
 export default function Header() {
 
-    const [activeTab,setActiveTab] = useState('Home')
+    const [activeTab,setActiveTab] = useLocalStorage('activeTab', 'Home')
+    const [mounted,setMounted] = useState(false)
+
+    useEffect(() => {
+       setMounted(true)
+    }, [])
 
     function handleClick(tab: string) {
       setActiveTab(tab)
@@ -13,6 +19,8 @@ export default function Header() {
         element.scrollIntoView({behavior: 'smooth', block: 'start'})
       }
     }
+
+    if(!mounted) return null
     
   return <motion.nav initial={{y: -70}} animate={{y: 0}} transition={{type: 'spring', bounce: 0.7, duration: 0.8}}
   className="fixed z-[99] top-4 backdrop-blur-md flex items-center gap-3 mb:gap-1 font-semibold text-lg mb:text-base rounded-full p-1 bg-white/10 border border-white/15">
