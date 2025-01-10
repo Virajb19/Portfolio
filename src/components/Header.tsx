@@ -5,7 +5,8 @@ import { useLocalStorage } from "usehooks-ts"
 
 export default function Header() {
 
-    const [activeTab,setActiveTab] = useLocalStorage('activeTab', 'Home')
+    // const [activeTab,setActiveTab] = useLocalStorage('activeTab', 'Home')
+    const [activeTab, setActiveTab] = useState('Home')
     const [mounted,setMounted] = useState(false)
 
     useEffect(() => {

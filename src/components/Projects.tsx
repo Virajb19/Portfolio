@@ -12,7 +12,7 @@ const projects = [
 ]
 
 export default function Projects() {
-  return <div id="projects" className="flex flex-col items-center mb:overflow-hidden">
+  return <div id="projects" className="flex flex-col items-center mb:overflow-hidden w-full pb-4">
      <h2 className="text-5xl mb-10 font-bold text-orange-600 underline">Projects</h2>
      <div className="grid grid-cols-1 sm:grid-cols-2 sm:mx-3 gap-10">
         {projects.map((project,i) => {
