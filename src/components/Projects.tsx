@@ -5,7 +5,7 @@ import { BsGithub } from 'react-icons/bs'
 import { motion } from 'framer-motion'
 
 const projects = [
-  {name: 'Github', stack : ['Next JS', 'Typescript','Next Auth', 'Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'Tanstack Query', 'Stripe'], liveUrl: '', github: 'https://github.com/Virajb19/GitChat'},
+  {name: 'GitChat', stack : ['Next JS', 'Typescript','Next Auth', 'Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'Tanstack Query', 'Stripe'], liveUrl: '', github: 'https://github.com/Virajb19/GitChat'},
   {name: 'Quizmify', stack: ['Next JS', 'Typescript','Next Auth', 'Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'Tanstack Query'], liveUrl: '', github: 'https://github.com/Virajb19/Quizmify'},
   {name: 'CodeCraft', stack: ['React JS', 'Express JS', 'Node JS','Typescript','Passport JS', 'Zustand', 'Socket IO','Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'Tanstack Query'], liveUrl: '', github: 'https://github.com/Virajb19/CodeCraft'},
   {name: 'ChatPDF', stack: ['Next JS', 'Typescript','Next Auth', 'Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'Tanstack Query', 'Stripe', 'Zod', 'AWS S3', 'Pinecone DB'], liveUrl: '', github: 'https://github.com/Virajb19/ChatPDF'}
