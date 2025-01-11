@@ -45,7 +45,7 @@ export default function Contacts() {
                  return <motion.div key={i} initial={{opacity: 0, y: 15, rotate: 20}} whileInView={{opacity: 1, y: 0, rotate: 0}} transition={{duration: 1, delay: i * 0.3, type: 'spring', bounce: 0.5}} 
                  className="flex flex-col items-center gap-1">
                       <Link target="_blank" href={link.href} className="border-2 border-orange-400 bg-black p-4 mb:p-3 group rounded-lg relative overflow-hidden">
-                       <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-transparent via-white/25 to-transparent -translate-x-full group-hover:translate-x-full duration-1000"/>
+                       {/* <div className="absolute inset-0 rounded-lg bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full duration-1000"/> */}
                       <link.icon className="size-12 mb:size-7 text-orange-600 group-hover:text-yellow-500 group-hover:-translate-y-1 group-hover:rotate-6 group-hover:scale-105 duration-300"/>
                   </Link>
                    <h4 className="text-lg mb:hidden font-semibold text-orange-300">{link.label}</h4>
