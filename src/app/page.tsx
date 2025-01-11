@@ -41,7 +41,9 @@ export default function HomePage() {
        <Contacts />
 
        <div className='flex items-center font-bold text-2xl mb:text-lg mt-5'>
-           Made with ❤️ by <span className='bg-gradient-to-r ml-2 from-orange-400 via-orange-600 to-orange-700 bg-clip-text text-transparent'>viraj.bhardwaj</span>
+           Made with <motion.span initial={{opacity: 0, scale: 0.6}} whileInView={{opacity: 1, scale: 1}} transition={{duration: 0.6, delay: 0.4, type: 'spring', bounce: 0.8}} className='mx-1'> ❤️ </motion.span>
+            by 
+            <motion.span initial={{y: 15, filter: 'blur(5px)', opacity: 0}} whileInView={{y: 0, filter: 'blur(0px)', opacity: 1}} transition={{duration: 0.7, ease: 'easeInOut'}} className='bg-gradient-to-r ml-2 from-orange-400 via-orange-600 to-orange-700 bg-clip-text text-transparent'>viraj.bhardwaj</motion.span>
        </div>
   </div>
 }
