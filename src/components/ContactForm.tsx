@@ -43,7 +43,7 @@ export default function ContactForm() {
         }
     }   
     
-  return <motion.div initial={{y: 40, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{duration: 1.2, ease: 'easeInOut'}} className="border mb:w-[90vw] max-w-2xl w-full p-3 rounded-xl border-gray-700 bg-white/10">
+  return <motion.div initial={{y: 40, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{duration: 1.2, ease: 'easeInOut'}} className="border mb:w-[90vw] max-w-2xl w-full p-3 rounded-xl backdrop-blur-2xl border-gray-700 bg-white/10">
              <Form {...form}>
                 <form  ref={formRef} className='flex flex-col gap-2' onSubmit={form.handleSubmit(onSubmit)}>
                     <h3 className='text-4xl mb:text-3xl font-bold underline mx-auto'>Send me a {" "}

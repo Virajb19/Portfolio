@@ -8,13 +8,15 @@ import Contacts from '@/components/Contacts';
 import Skills from '@/components/Skills';
 import Projects from '@/components/Projects';
 import TypingAnimation from "@/components/ui/typing-animation";
+import { StarsBackground } from '@/components/ui/stars-background';
+import { ShootingStars } from '@/components/ui/shooting-stars';
 
 export default function HomePage() {
   return <div className="w-full min-h-screen relative bg-black flex flex-col justify-center items-center pt-16 pb-7 text-white overflow-hidden">
 
        <Header />
 
-       <div id='home' className='flex flex-col gap-3 items-center'>
+       <div id='home' className='flex flex-col gap-3 items-center z-30'>
           <Image width={200} height={200} alt='user' src={'/memoji-computer.png'}/>
           <p className='text-5xl mb:text-3xl font-semibold'>Hey 👋 I'm <span className='uppercase bg-gradient-to-tr from-orange-400 to-orange-700 bg-clip-text text-transparent'>Viraj</span>
           </p>
@@ -45,5 +47,8 @@ export default function HomePage() {
             by 
             <motion.span initial={{y: 15, filter: 'blur(5px)', opacity: 0}} whileInView={{y: 0, filter: 'blur(0px)', opacity: 1}} transition={{duration: 0.7, ease: 'easeInOut'}} className='bg-gradient-to-r ml-2 from-orange-400 via-orange-600 to-orange-700 bg-clip-text text-transparent'>viraj.bhardwaj</motion.span>
        </div>
+
+       <StarsBackground />
+       <ShootingStars />
   </div>
 }
