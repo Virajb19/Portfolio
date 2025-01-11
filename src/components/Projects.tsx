@@ -18,7 +18,7 @@ export default function Projects() {
         {projects.map((project,i) => {
            return <motion.div key={project.name} initial={{opacity: 0, x: i % 2 === 0 ? -30 : 30}} whileInView={{opacity: 1, x: 0}} transition={{duration: 0.7, delay: i * 0.1, ease: 'easeInOut'}}
             className="relative group max-w-[500px] mb:w-[90vw] flex flex-col gap-2 border border-orange-500 rounded-lg duration-300 hover:-translate-y-2">
-           <div className="absolute -inset-[2px] bg-orange-600 blur-md group-hover:animate-pulse"/>
+           <div className="absolute -inset-[2px] bg-orange-600 blur-md sm:group-hover:animate-pulse sm:group-hover:duration-700"/>
              <div className="flex flex-col gap-3 z-10 bg-black rounded-lg h-full">
                    <h3 className="text-3xl font-bold ml-4 mt-2">{project.name}</h3>
                    <Image src={'/gitchat.png'} alt="gitchat" width={500} height={500} className="object-contain rounded-lg"/>
