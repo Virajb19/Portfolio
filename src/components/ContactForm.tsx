@@ -10,8 +10,8 @@ import { useRef } from 'react';
 
 const sendMessageSchema = z.object({
     name: z.string().min(1, { message: 'Provide your name'}).max(30),
-    email: z.string().email({message: 'Email is not valid!'}),
-    linkedIn: z.string().url().refine(url => url.includes('linkedin.com'), {message: 'Invalid URL'}).optional(),
+    email: z.string().email({ message: 'Email is not valid!'}),
+    linkedIn: z.string().url({ message: 'Invalid URL'}).refine(url => url.includes('linkedin.com'), {message: 'This is not Linkedin URL'}).optional(),
     message: z.string().min(1, { message: 'Enter a message'}).max(500)
 })
 
