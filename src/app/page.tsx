@@ -18,13 +18,14 @@ export default function HomePage() {
 
        <div id='home' className='flex flex-col gap-3 items-center z-30'>
           <Image width={200} height={200} alt='user' src={'/memoji-computer.png'}/>
-          <p className='text-5xl mb:text-3xl font-semibold'>Hey 👋 I'm <span className='uppercase bg-gradient-to-tr from-orange-400 to-orange-700 bg-clip-text text-transparent'>Viraj</span>
+          <p className='text-5xl mb:text-3xl font-semibold'>Hey 👋 I'm {" "}
+            <motion.span initial={{opacity: 0, filter: 'blur(7px)'}} whileInView={{opacity: 1, filter: 'blur(0px)'}} transition={{duration: 0.7, ease: 'easeInOut'}} className='uppercase bg-gradient-to-tr from-orange-400 to-orange-700 bg-clip-text text-transparent'>Viraj</motion.span>
           </p>
             <div className='flex items-center gap-2'>
                   <TypingAnimation delay={0.3} className='mb:text-2xl'>
                     I am a FullStack Developer
                 </TypingAnimation>
-                <motion.span initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.7, repeat: Infinity, repeatType: 'reverse'}} className='inline-block rounded-sm w-1 h-10 bg-orange-500'/>
+                <motion.span initial={{opacity: 0}} animate={{opacity: 1}} transition={{duration: 0.6, repeat: Infinity, repeatType: 'reverse'}} className='inline-block rounded-sm w-1 h-10 bg-orange-500'/>
             </div>
            <motion.button initial={{scale: 0.6, opacity: 0}} whileInView={{scale: 1, opacity: 1}} transition={{duration: 0.5, ease: 'easeOut'}}
             onClick={() => {

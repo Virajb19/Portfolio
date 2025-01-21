@@ -11,7 +11,7 @@ import { useRef } from 'react';
 const sendMessageSchema = z.object({
     name: z.string().min(1, { message: 'Provide your name'}).max(30),
     email: z.string().email({ message: 'Email is not valid!'}),
-    linkedIn: z.string().url({ message: 'Invalid URL'}).refine(url => url.includes('linkedin.com'), {message: 'This is not Linkedin URL'}).optional(),
+    linkedIn: z.string().url({ message: 'Invalid URL'}).refine(url => url.includes('linkedin.com'), {message: 'This is not Linkedin URL'}).optional().or(z.literal('')),
     message: z.string().min(1, { message: 'Enter a message'}).max(500)
 })
 
@@ -82,7 +82,7 @@ export default function ContactForm() {
                             name="linkedIn"
                             render={({ field }) => (
                             <FormItem className='flex flex-col'>
-                                <FormLabel className='text-lg font-semibold'>Linked In <span className='text-gray-500 text-sm'>( Optional )</span></FormLabel>
+                                <FormLabel className='text-lg font-semibold'>Linked in <span className='text-gray-500 text-sm'>( Optional )</span></FormLabel>
                                 <FormControl>
                                     <input {...field} className='input-style' placeholder='https://www.linkedin.com/in/username' />
                                 </FormControl>

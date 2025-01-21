@@ -14,8 +14,10 @@ export default function Skills() {
       <h2 className="text-5xl mb-4 font-bold underline"> Tech <span className="bg-gradient-to-r from-orange-400 to-orange-600 text-transparent bg-clip-text">Stack</span></h2>
        <ul className="grid grid-cols-3 sm:grid-cols-5 gap-3 mb:gap-1 max-w-3xl mb:mx-4">
           {skills.map((skill,i) => {
+            
             const image = skill.toLowerCase().replace(' ', '') 
-            const file = (skill === 'Next JS' || skill === 'Next Auth') ? '.png' : '.svg'
+            const file = skill === 'Next Auth' ? '.png' : '.svg'
+
             return <motion.li initial={{opacity: 0, scale: 0.7}} whileInView={{opacity: 1, scale: 1}} transition={{duration: 0.3, delay: 0.1 * i,type: 'spring', bounce: 0.6}}
             key={skill} className="flex flex-col items-center font-semibold text-lg uppercase gap-2"> 
                 <div className="bg-white/10 to-transparent rounded-lg p-4 mb:p-2">
