@@ -18,7 +18,7 @@ export default function Skills() {
             const image = skill.toLowerCase().replace(' ', '') 
             const file = skill === 'Next Auth' ? '.png' : '.svg'
 
-            return <motion.li initial={{opacity: 0, scale: 0.7}} whileInView={{opacity: 1, scale: 1}} transition={{duration: 0.3, delay: 0.1 * i,type: 'spring', bounce: 0.6}}
+            return <motion.li initial={{opacity: 0, scale: 0.7}} whileInView={{opacity: 1, scale: 1}} viewport={{once: true}} transition={{duration: 0.3, delay: 0.1 * i,type: 'spring', bounce: 0.6}}
             key={skill} className="flex flex-col items-center font-semibold text-lg gap-2"> 
                 <div className="bg-white/10 to-transparent rounded-lg p-4 mb:p-2">
                   <Image src={'/' + image + file} width={isMobile ? 50 : 60} height={isMobile ? 50 : 60} alt={skill}/>
