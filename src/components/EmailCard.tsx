@@ -17,7 +17,7 @@ export default function EmailCard() {
      copy('virajb004@gmail.com')
      setIsCopied(true)
      setTimeout(() => setIsCopied(false), 2500)
-   }} className={twMerge("text-lg mb:text-base border-[2px] border-orange-400 rounded-xl font-semibold w-fit px-3 py-1.5 flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity", isCopied && 'text-green-400 border-green-500 opacity-100')}>
+   }} disabled={isCopied} className={twMerge("text-lg mb:text-base border-[2px] border-orange-400 rounded-xl font-semibold w-fit px-3 py-1.5 flex items-center gap-2 opacity-70 hover:opacity-100 transition-opacity disabled:cursor-not-allowed", isCopied && 'text-green-400 border-green-500 opacity-100')}>
       {isCopied ? (
          <>
            <CheckCheck /> Email copied !

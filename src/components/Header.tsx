@@ -1,24 +1,77 @@
 import { useEffect, useState } from "react"
 import { motion } from 'framer-motion'
 import { twMerge } from "tailwind-merge"
-import { useLocalStorage } from "usehooks-ts"
+import { useLocalStorage, useIsMounted, useIntersectionObserver } from "usehooks-ts"
+import { toast } from "sonner"
 
 export default function Header() {
 
     // const [activeTab,setActiveTab] = useLocalStorage('activeTab', 'Home')
     const [activeTab, setActiveTab] = useState('Home')
     const [mounted,setMounted] = useState(false)
+    // const isMounted = useIsMounted()
+
+    // const { isIntersecting, ref} = useIntersectionObserver({ threshold: [0.6, 1]})
+    // toast.success(isIntersecting)
+
+    // const [isScrolling, setIsScrolling] = useState(false) 
 
     useEffect(() => {
-       setMounted(true)
+      setMounted(true)
     }, [])
 
+    // useEffect(() => {
+    //   if(isScrolling) return
+  
+    //    const sections = document.querySelectorAll('.section')
+       
+    //    const observer = new IntersectionObserver(
+    //     (entries: IntersectionObserverEntry[]) => {
+    //         let fullyVisible: HTMLElement | null = null
+    //         let mostVisible: HTMLElement | null = null
+    //         let highestRatio = 0
+
+    //         entries.forEach(entry => {
+    //             const target = entry.target as HTMLElement
+
+    //             if (entry.intersectionRatio === 1) {
+    //                 fullyVisible = target
+    //             }
+
+    //             if (entry.isIntersecting && entry.intersectionRatio > highestRatio) {
+    //                 mostVisible = target
+    //                 highestRatio = entry.intersectionRatio
+    //             }
+    //         })
+
+    //         const selectedSection: HTMLElement | null = fullyVisible || mostVisible 
+
+    //         if (selectedSection) {
+    //             const sectionId = selectedSection.id.charAt(0).toUpperCase() + selectedSection.id.slice(1)
+    //             setActiveTab(sectionId)
+    //         }
+    //     },
+    //     { threshold: [0.6, 1.0] }
+    // )
+            
+    //     sections.forEach(section => observer.observe(section));
+
+    //     return () => {
+    //         sections.forEach(section => observer.unobserve(section));
+    //     }
+
+    // }, [isScrolling])
+
     function handleClick(tab: string) {
+      // setIsScrolling(true)
+
       setActiveTab(tab)
       const element = document.getElementById(tab.toLowerCase())
       if(element) {
         element.scrollIntoView({behavior: 'smooth', block: 'start'})
       }
+
+      // setTimeout(() => setIsScrolling(false), 800)
     }
 
     if(!mounted) return null

@@ -12,7 +12,7 @@ const sendMessageSchema = z.object({
     name: z.string().min(1, { message: 'Provide your name'}).max(30),
     email: z.string().email({ message: 'Email is not valid!'}),
     linkedIn: z.string().url({ message: 'Invalid URL'}).refine(url => url.includes('linkedin.com'), {message: 'This is not Linkedin URL'}).optional().or(z.literal('')),
-    message: z.string().min(1, { message: 'Enter a message'}).max(500)
+    message: z.string().min(1, { message: 'Enter a message'}).max(1000, { message: 'message too big!'})
 })
 
 type Input = z.infer<typeof sendMessageSchema>
@@ -21,31 +21,34 @@ export default function ContactForm() {
 
     const form = useForm<Input>({
         resolver: zodResolver(sendMessageSchema),
-        defaultValues: {email: '', name: '', message: ''}
+        defaultValues: {email: '', name: '', message: '', linkedIn: ''}
     })
 
     const formRef = useRef<HTMLFormElement>(null)
 
     async function onSubmit(data: Input) {
+        console.log(data)
+
         if(formRef.current) {
             try {
-             const res = await emailjs.sendForm("service_5i21pba","template_llshrg9", formRef.current, { publicKey: "D_zqeLrLgMQkaPeZ4"})
+             const res = await emailjs.sendForm("service_en36aj5","template_r1whn3s", formRef.current, { publicKey: "8j25LPoQ-67DlOZBT"})
              if(res.status !== 200) {
                 throw new Error(`Error: ${res.text}`)
              }
              
-             toast.success('Message sent successfully.')
+             toast.success('Message sent successfully.', {duration: 3000})
              form.reset()
+             form.setValue('linkedIn', '')
             } catch(err) {
                 console.error(err)
-                toast.error('Error sending message.Try again!')
+                toast.error('Error sending message.Try Mailing me!', {duration: 5000})
             }              
         }
     }   
     
   return <motion.div initial={{y: 40, opacity: 0}} whileInView={{y: 0, opacity: 1}} transition={{duration: 1.2, ease: 'easeInOut'}} className="border mb:w-[90vw] max-w-2xl w-full p-3 rounded-xl backdrop-blur-2xl border-gray-700 bg-white/10">
              <Form {...form}>
-                <form  ref={formRef} className='flex flex-col gap-2' onSubmit={form.handleSubmit(onSubmit)}>
+                <form ref={formRef} className='flex flex-col gap-2' onSubmit={form.handleSubmit(onSubmit)}>
                     <h3 className='text-4xl mb:text-3xl font-bold underline mx-auto'>Send me a {" "}
                         <span className='bg-gradient-to-tr from-orange-400 via-orange-500 to-orange-700 bg-clip-text text-transparent'>Message!</span>
                     </h3>

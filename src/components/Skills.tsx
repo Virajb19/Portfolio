@@ -10,7 +10,7 @@ export default function Skills() {
 
     const isMobile = useMediaQuery('(max-width: 640px)')
 
-  return <section id="skills" className="flex flex-col items-center gap-3 mt-7">
+  return <section id="skills" className="flex flex-col items-center gap-3 mt-7 section">
       <h2 className="text-5xl mb-4 font-bold underline"> Tech <span className="bg-gradient-to-r from-orange-400 to-orange-600 text-transparent bg-clip-text">Stack</span></h2>
        <ul className="grid grid-cols-3 sm:grid-cols-5 gap-3 mb:gap-1 max-w-3xl mb:mx-4">
           {skills.map((skill,i) => {

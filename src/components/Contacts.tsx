@@ -37,7 +37,7 @@ const Links = [
 
 export default function Contacts() {
 
-  return <footer id="contact" className="flex flex-col gap-10 items-center mt-4 z-30">
+  return <footer id="contact" className="flex flex-col gap-10 items-center mt-4 z-30 section">
           <h3 className="text-5xl font-bold underline"><span className="bg-gradient-to-r from-orange-400 to-orange-600 text-transparent bg-clip-text">Contact</span> Me</h3>
            <EmailCard />
           <div className="flex items-center gap-5 mb:gap-3">

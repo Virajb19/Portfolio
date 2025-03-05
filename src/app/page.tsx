@@ -16,7 +16,7 @@ export default function HomePage() {
 
        <Header />
 
-       <div id='home' className='flex flex-col gap-3 items-center z-30'>
+       <div id='home' className='flex flex-col gap-3 items-center z-30 section'>
           <Image width={200} height={200} alt='user' src={'/memoji-computer.png'}/>
           <p className='text-5xl mb:text-3xl font-semibold'>Hey 👋 I'm {" "}
             <motion.span initial={{opacity: 0, filter: 'blur(7px)'}} whileInView={{opacity: 1, filter: 'blur(0px)'}} transition={{duration: 0.7, ease: 'easeInOut'}} className='uppercase bg-gradient-to-tr from-orange-400 to-orange-700 bg-clip-text text-transparent'>Viraj</motion.span>
