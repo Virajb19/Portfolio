@@ -8,6 +8,10 @@ import { Send } from 'lucide-react';
 import { toast } from 'sonner'
 import { useRef } from 'react';
 
+const serviceId = process.env.NEXT_PUBLIC_SERVICE_ID as string
+const templateId = process.env.NEXT_PUBLIC_TEMPLATE_ID as string
+const publicKey = process.env.NEXT_PUBLIC_PUBLIC_KEY as string
+
 const sendMessageSchema = z.object({
     name: z.string().min(1, { message: 'Provide your name'}).max(30),
     email: z.string().email({ message: 'Email is not valid!'}),
@@ -31,7 +35,7 @@ export default function ContactForm() {
 
         if(formRef.current) {
             try {
-             const res = await emailjs.sendForm("service_en36aj5","template_r1whn3s", formRef.current, { publicKey: "8j25LPoQ-67DlOZBT"})
+             const res = await emailjs.sendForm(serviceId, templateId, formRef.current, { publicKey })
              if(res.status !== 200) {
                 throw new Error(`Error: ${res.text}`)
              }
