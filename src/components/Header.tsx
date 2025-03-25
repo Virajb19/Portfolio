@@ -4,10 +4,12 @@ import { twMerge } from "tailwind-merge"
 import { useLocalStorage, useIsMounted, useIntersectionObserver } from "usehooks-ts"
 import { toast } from "sonner"
 
+type Tab = 'Home' | 'Skills' | 'Projects' | 'Contact'
+
 export default function Header() {
 
     // const [activeTab,setActiveTab] = useLocalStorage('activeTab', 'Home')
-    const [activeTab, setActiveTab] = useState('Home')
+    const [activeTab, setActiveTab] = useState<Tab>('Home')
     const [mounted,setMounted] = useState(false)
     // const isMounted = useIsMounted()
 
@@ -62,7 +64,7 @@ export default function Header() {
 
     // }, [isScrolling])
 
-    function handleClick(tab: string) {
+    function handleClick(tab: Tab) {
       // setIsScrolling(true)
 
       setActiveTab(tab)
@@ -79,7 +81,7 @@ export default function Header() {
   return <motion.nav initial={{y: -70}} animate={{y: 0}} transition={{type: 'spring', bounce: 0.7, duration: 0.8}}
   className="fixed z-[99] top-4 backdrop-blur-md flex items-center gap-3 mb:gap-1 font-semibold text-lg mb:text-base rounded-full p-1 bg-white/10 border border-white/15">
       {['Home','Skills','Projects','Contact'].map(tab => {
-        return <button key={tab} onClick={() => handleClick(tab)} className={twMerge("relative px-3 py-1.5 rounded-full duration-300 transition-colors",
+        return <button key={tab} onClick={() => handleClick(tab as Tab)} className={twMerge("relative px-3 py-1.5 rounded-full duration-300 transition-colors",
             tab === activeTab ? 'text-white' : 'text-gray-400 hover:text-white hover:bg-white/10'
         )}>
             {tab}

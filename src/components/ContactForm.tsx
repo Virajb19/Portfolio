@@ -33,6 +33,11 @@ export default function ContactForm() {
     async function onSubmit(data: Input) {
         console.log(data)
 
+        if(data.message.length > 1000) {
+            toast.error('Message too big!. Keep it short')
+            return
+        }
+
         if(formRef.current) {
             try {
              const res = await emailjs.sendForm(serviceId, templateId, formRef.current, { publicKey })
