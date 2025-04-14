@@ -5,7 +5,7 @@ import { BsGithub } from 'react-icons/bs'
 import { motion } from 'framer-motion'
 
 const projects = [
-  {name: 'GitChat', descripton: 'Ask AI about your Github repository',stack : ['Next JS', 'Typescript','Next Auth', 'Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'Zod', 'Tanstack Query', 'Stripe', 'Appwrite'], liveUrl: 'https://gitchat-viraj.vercel.app', github: 'https://github.com/Virajb19/GitChat'},
+  {name: 'GitSync', descripton: 'Ask AI about your Github repository',stack : ['Next JS', 'Typescript','Next Auth', 'Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'Zod', 'Tanstack Query', 'Stripe', 'Appwrite'], liveUrl: 'https://gitsync-viraj.vercel.app', github: 'https://github.com/Virajb19/GitSync'},
   {name: 'ChatPDF', descripton: 'Upload PDFs and chat with an AI assistant to extract key insights.',stack: ['Next JS', 'Typescript','Next Auth', 'Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'Tanstack Query', 'Stripe', 'Zod', 'AppWrite', 'Pinecone DB'], liveUrl: 'https://chatpdf-viraj.vercel.app', github: 'https://github.com/Virajb19/ChatPDF'},
   {name: 'Quizmify', descripton: 'A Quiz platform',stack: ['Next JS', 'Typescript','Next Auth', 'Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'Zod' ,'Tanstack Query'], liveUrl: 'https://quizmify-viraj.vercel.app', github: 'https://github.com/Virajb19/Quizmify'},
   {name: 'Quick Chat', descripton: 'A real-time chat app built using Socket IO',stack: ['Next JS', 'Typescript','Next Auth', 'Postgresql','Prisma', 'Tailwind CSS', 'ShadCN UI', 'tRPC', 'Zod', 'Socket IO'], liveUrl: 'https://quickchat-viraj.vercel.app', github: 'https://github.com/Virajb19/QuickChat'},

@@ -28,7 +28,7 @@ const Links = [
       label: "LinkedIn",
     },
     {
-      href: 'https://drive.google.com/file/d/1nNo1hJ28LGrEda3wZyEKkOLXvl87JnIj/view?usp=sharing',
+      href: 'https://drive.google.com/file/d/16n5ZHETLkLYF43vcbS0QETfy4HxA3taQ/view?usp=sharing',
       icon: FaGoogleDrive,
       label: 'Resume'
     }
